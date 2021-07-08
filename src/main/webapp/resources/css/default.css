@@ -1,0 +1,59 @@
+li.dir {
+	list-style-image: url("img/folder.png.wtf");
+}
+
+li.file {
+	list-style-image: url("img/page_white.png.wtf");
+}
+
+li.pdf {
+	list-style-image: url("img/page_white_acrobat.png.wtf");
+}
+
+li.java {
+	list-style-image: url("img/page_white_cup.png.wtf");
+}
+
+li.txt {
+	list-style-image: url("img/page_white_text.png.wtf");
+}
+
+li.zip {
+	list-style-image: url("img/page_white_compressed.png.wtf");
+}
+
+li.img {
+	list-style-image: url("img/picture.png.wtf");
+}
+
+li.photo {
+	list-style-image: url("img/photo.png.wtf");
+}
+
+li.xml {
+	list-style-image: url("img/page_white_code.png.wtf");
+}
+
+li.music {
+	list-style-image: url("img/music.png.wtf");
+}
+
+li.video {
+	list-style-image: url("img/film.png.wtf");
+}
+
+li.exe {
+	list-style-image: url("img/application.png.wtf");
+}
+
+li.xls {
+	list-style-image: url("img/page_white_excel.png.wtf");
+}
+
+li.word {
+	list-style-image: url("img/page_white_word.png.wtf");
+}
+
+li.ppt {
+	list-style-image: url("img/page_white_powerpoint.png.wtf");
+}
