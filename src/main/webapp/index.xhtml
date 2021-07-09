@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:ui="http://java.sun.com/jsf/facelets"
-	  xmlns:f="http://java.sun.com/jsf/core"
-	  xmlns:fn="http://java.sun.com/jsp/jstl/functions">
-    <h:head>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+	<h:head>
 		<h:outputStylesheet library="css" name="default.css"/>
-        <title>File System</title>
-    </h:head>
-    <h:body>
+		<title>File System</title>
+	</h:head>
+	<h:body>
 		<ui:param value="#{param['dir']}" name="dir"/>
 		<ui:param value="#{fileLister.listDirectories(dir)}" name="dirs"/>
 		<ui:param value="#{fileLister.listFiles(dir)}" name="files"/>
@@ -29,7 +29,33 @@
 					<ui:param value="#{path.fileName}" name="name"/>
 					<ui:param value="#{fn:toLowerCase(name)}" name="lowerName"/>
 					<ui:param value="#{fileLister.size(path)}" name="size"/>
-					<li class="#{fn:endsWith(lowerName, 'pdf') ? 'pdf' : ((fn:endsWith(lowerName, 'java') or fn:endsWith(lowerName, 'class') or fn:endsWith(lowerName, 'jar') or fn:endsWith(lowerName, 'jnlp')) ? 'java' : (fn:endsWith(lowerName, 'txt') ? 'txt' : (fn:endsWith(lowerName, 'zip') or fn:endsWith(lowerName, 'rar') ? 'zip' : ((fn:endsWith(lowerName, 'gif') or fn:endsWith(lowerName, 'png') or fn:endsWith(lowerName, 'bmp')) ? 'img' : (fn:endsWith(lowerName, 'jpg') or fn:endsWith(lowerName, 'jpeg') ? 'photo' : (fn:endsWith(lowerName, 'xml') or fn:endsWith(lowerName, 'xhtml') ? 'xml' : (fn:endsWith(lowerName, 'mp3') or fn:endsWith(lowerName, 'wav') or fn:endsWith(lowerName, 'wma') ? 'music' : (fn:endsWith(lowerName, 'avi') or fn:endsWith(lowerName, 'mov') or fn:endsWith(lowerName, 'mp4') or fn:endsWith(lowerName, 'mpg') or fn:endsWith(lowerName, 'mpeg') or fn:endsWith(lowerName, 'mkv') or fn:endsWith(lowerName, 'wmv') or fn:endsWith(lowerName, 'flv') ? 'video' : (fn:endsWith(lowerName, 'exe') ? 'exe' : (fn:endsWith(lowerName, 'xls') or fn:endsWith(lowerName, 'xlsx') ? 'xls' : (fn:endsWith(lowerName, 'doc') or fn:endsWith(lowerName, 'docx') or fn:endsWith(lowerName, 'rtf') ? 'word' : (fn:endsWith(lowerName, 'ppt') or fn:endsWith(lowerName, 'pptx') ? 'ppt' : 'file'))))))))))))}">
+					<li class="#{fn:endsWith(lowerName, 'pdf')
+								 ? 'pdf'
+								 : ((fn:endsWith(lowerName, 'java') or fn:endsWith(lowerName, 'class') or fn:endsWith(lowerName, 'jar') or fn:endsWith(lowerName, 'jnlp'))
+									? 'java'
+									: (fn:endsWith(lowerName, 'txt')
+										? 'txt'
+										: (fn:endsWith(lowerName, 'zip') or fn:endsWith(lowerName, 'rar')
+											? 'zip'
+											: ((fn:endsWith(lowerName, 'gif') or fn:endsWith(lowerName, 'png') or fn:endsWith(lowerName, 'bmp'))
+												? 'img'
+												: (fn:endsWith(lowerName, 'jpg') or fn:endsWith(lowerName, 'jpeg')
+													? 'photo'
+													: (fn:endsWith(lowerName, 'xml') or fn:endsWith(lowerName, 'xhtml')
+														? 'xml'
+														: (fn:endsWith(lowerName, 'mp3') or fn:endsWith(lowerName, 'wav') or fn:endsWith(lowerName, 'wma')
+															? 'music'
+															: (fn:endsWith(lowerName, 'avi') or fn:endsWith(lowerName, 'mov') or fn:endsWith(lowerName, 'mp4') or fn:endsWith(lowerName, 'mpg') or fn:endsWith(lowerName, 'mpeg') or fn:endsWith(lowerName, 'mkv') or fn:endsWith(lowerName, 'wmv') or fn:endsWith(lowerName, 'flv')
+																? 'video'
+																: (fn:endsWith(lowerName, 'exe')
+																	? 'exe'
+																	: (fn:endsWith(lowerName, 'xls') or fn:endsWith(lowerName, 'xlsx')
+																		? 'xls'
+																		: (fn:endsWith(lowerName, 'doc') or fn:endsWith(lowerName, 'docx') or fn:endsWith(lowerName, 'rtf')
+																			? 'word'
+																			: (fn:endsWith(lowerName, 'ppt') or fn:endsWith(lowerName, 'pptx')
+																				? 'ppt'
+																				: 'file'))))))))))))}">
 						<h:outputLink value="file/#{empty dir ? '' : dir.concat('/')}#{name}">
 							<h:outputText value="#{name}"/>
 						</h:outputLink>
@@ -45,5 +71,5 @@
 				<img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88"/>
 			</a>
 		</p>
-    </h:body>
+	</h:body>
 </html>
